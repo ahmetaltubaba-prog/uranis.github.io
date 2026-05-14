@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uranis — Plant Breeders' Rights Consultancy, Türkiye</title>
+<meta name="description" content="Independent specialist counsel on plant variety protection, registration strategy, and portfolio management — advising IP firms and rights holders worldwide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f5f2ec;
+    --cream-dark: #ede9e0;
+    --black: #111110;
+    --dark: #1c1c1a;
+    --mid: #6b6860;
+    --light: #a8a49c;
+    --accent: #2c4a2e;
+    --accent-light: #4a7a4e;
+    --border: #ddd9d0;
+    --white: #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--black);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAVIGATION ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(245, 242, 236, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2.5rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    color: var(--dark);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-cta {
+    background: var(--black);
+    color: var(--white) !important;
+    padding: 0.55rem 1.3rem;
+    border-radius: 2px;
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.04em;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--accent) !important; color: var(--white) !important; }
+
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+  .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--black); margin: 5px 0; transition: 0.3s; }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    padding-top: 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    gap: 4rem;
+  }
+
+  .hero-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 400;
+    line-height: 1.08;
+    color: var(--black);
+    margin-bottom: 1.8rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    color: var(--mid);
+    line-height: 1.75;
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--black);
+    color: var(--white);
+    padding: 0.8rem 1.8rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--accent); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    color: var(--dark);
+    padding: 0.8rem 1.8rem;
+    font-size: 0.85rem;
+    font-weight: 400;
+    text-decoration: none;
+    border-radius: 2px;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--dark); }
+
+  .hero-tagline {
+    margin-top: 3rem;
+    font-size: 0.78rem;
+    color: var(--light);
+    letter-spacing: 0.02em;
+    font-weight: 300;
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+  }
+
+  .hero-image {
+    position: relative;
+    height: 580px;
+    background: var(--cream-dark);
+    border-radius: 3px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  .hero-image-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--light);
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .hero-image-placeholder svg { opacity: 0.3; }
+  .hero-image-placeholder p { font-size: 0.82rem; font-weight: 300; }
+
+  /* ── SECTIONS COMMON ── */
+  section { padding: 7rem 2.5rem; }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--black);
+    margin-bottom: 3.5rem;
+    max-width: 700px;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── WHY PBR MATTERS ── */
+  #why-pbr { background: var(--cream-dark); }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+  }
+
+  .two-col-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 1rem;
+  }
+
+  .two-col-item p {
+    font-size: 0.9rem;
+    color: var(--mid);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* ── AREAS OF EXPERTISE ── */
+  #areas-of-expertise { background: var(--cream); }
+
+  .three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 1rem;
+  }
+
+  .expertise-item {
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+  }
+
+  .expertise-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .expertise-item h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 1rem;
+    letter-spacing: 0.01em;
+  }
+
+  .expertise-item p {
+    font-size: 0.87rem;
+    color: var(--mid);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* ── HOW I WORK ── */
+  #how-i-work { background: var(--cream-dark); }
+
+  .process-list { margin-top: 1rem; }
+
+  .process-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 2rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .process-item:first-child { border-top: 1px solid var(--border); }
+
+  .process-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--border);
+    line-height: 1;
+    padding-top: 0.2rem;
+  }
+
+  .process-content h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 0.8rem;
+  }
+
+  .process-content p {
+    font-size: 0.88rem;
+    color: var(--mid);
+    line-height: 1.85;
+    font-weight: 300;
+  }
+
+  /* ── WHY URANIS ── */
+  #why-uranis { background: var(--cream); }
+
+  .principles-list { margin-top: 1rem; }
+
+  .principle-item {
+    padding: 1.8rem 0;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2rem;
+    align-items: baseline;
+  }
+
+  .principle-item:first-child { border-top: 1px solid var(--border); }
+
+  .principle-name {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--black);
+    letter-spacing: 0.02em;
+  }
+
+  .principle-desc {
+    font-size: 0.88rem;
+    color: var(--mid);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--cream-dark); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    font-size: 0.92rem;
+    color: var(--mid);
+    line-height: 1.9;
+    font-weight: 300;
+    margin-bottom: 1.4rem;
+  }
+
+  .about-text p:last-child { margin-bottom: 0; }
+
+  .about-contact {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .about-contact a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .about-contact a:hover { text-decoration: underline; }
+
+  .about-sidebar {
+    padding-top: 0.5rem;
+  }
+
+  .about-sidebar-item {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-sidebar-item:first-child { border-top: 1px solid var(--border); }
+
+  .about-sidebar-item .label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--light);
+    margin-bottom: 0.4rem;
+  }
+
+  .about-sidebar-item .value {
+    font-size: 0.88rem;
+    color: var(--dark);
+    font-weight: 400;
+  }
+
+  /* ── CTA ── */
+  #contact-cta {
+    background: var(--black);
+    text-align: center;
+    padding: 8rem 2.5rem;
+  }
+
+  #contact-cta .section-label { color: var(--accent-light); }
+
+  #contact-cta .section-title {
+    color: var(--white);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  #contact-cta p {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.5);
+    max-width: 480px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  #contact-cta .btn-primary {
+    background: var(--white);
+    color: var(--black);
+  }
+
+  #contact-cta .btn-primary:hover { background: var(--accent-light); color: var(--white); }
+
+  /* ── CONTACT FORM ── */
+  #contact {
+    background: var(--cream);
+    padding: 7rem 2.5rem;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .contact-info h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--black);
+    margin-bottom: 1.2rem;
+  }
+
+  .contact-info p {
+    font-size: 0.88rem;
+    color: var(--mid);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  .contact-detail {
+    font-size: 0.85rem;
+    color: var(--dark);
+    margin-bottom: 0.4rem;
+  }
+
+  .contact-detail a { color: var(--accent); text-decoration: none; font-weight: 500; }
+  .contact-detail a:hover { text-decoration: underline; }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .form-group:last-of-type { margin-bottom: 2rem; }
+
+  .form-group label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--dark);
+    text-transform: uppercase;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-row .form-group input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    padding: 0.7rem 0;
+    font-size: 0.9rem;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--black);
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus { border-color: var(--accent); }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: var(--light); font-weight: 300; }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-note {
+    font-size: 0.78rem;
+    color: var(--light);
+    margin-top: -0.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .form-note a { color: var(--accent); text-decoration: none; }
+  .form-note a:hover { text-decoration: underline; }
+
+  .btn-submit {
+    width: 100%;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 0.88rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+
+  .btn-submit:hover { background: var(--accent); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--cream-dark);
+    border-top: 1px solid var(--border);
+    padding: 2rem 2.5rem;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 0.78rem;
+    color: var(--light);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--cream); padding: 1.5rem; border-bottom: 1px solid var(--border); gap: 1.2rem; }
+    .nav-links.open { display: flex; }
+    .nav-toggle { display: block; }
+
+    #home { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; gap: 3rem; min-height: auto; }
+    .hero-image { height: 340px; order: -1; }
+    .two-col, .three-col, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .principle-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .process-item { grid-template-columns: 50px 1fr; gap: 1.2rem; }
+    section { padding: 4.5rem 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#home" class="nav-logo">Uranis</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#areas-of-expertise">Areas of Expertise</a></li>
+    <li><a href="#how-i-work">How I Work</a></li>
+    <li><a href="#why-uranis">Why Uranis</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-content fade-in">
+    <p class="hero-label">Plant Variety Protection</p>
+    <h1 class="hero-title">Plant Breeders' Rights Consultancy — Türkiye</h1>
+    <p class="hero-subtitle">Independent specialist counsel on plant variety protection, registration strategy, and portfolio management — advising IP firms and rights holders worldwide.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">Get in Touch →</a>
+      <a href="#areas-of-expertise" class="btn-secondary">Explore Services</a>
+    </div>
+    <p class="hero-tagline">Advising international IP firms and rights holders on Turkish plant variety protection.</p>
+  </div>
+  <div class="hero-image fade-in">
+    <div class="hero-image-placeholder">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+      </svg>
+      <p>Professional photo<br>coming soon</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY PBR MATTERS -->
+<section id="why-pbr">
+  <div class="section-inner fade-in">
+    <p class="section-label">Why PBR Matters</p>
+    <h2 class="section-title">Unprotected varieties mean lost commercial value.</h2>
+    <div class="two-col">
+      <div class="two-col-item">
+        <h3>The Risk</h3>
+        <p>Under Turkish PBR Law No. 5042, foreign applicants must designate a local proxy. Without specialist counsel, applications are open to procedural errors, missed deadlines, and rights that prove difficult to enforce in practice.</p>
+      </div>
+      <div class="two-col-item">
+        <h3>The Approach</h3>
+        <p>Specialist PBR counsel ensures applications correctly filed, deadlines met, and rights fully enforceable — turning a complex foreign filing into a managed, transparent process.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS OF EXPERTISE -->
+<section id="areas-of-expertise">
+  <div class="section-inner fade-in">
+    <p class="section-label">Areas of Expertise</p>
+    <h2 class="section-title">Specialist counsel across the full PBR lifecycle.</h2>
+    <div class="three-col">
+      <div class="expertise-item">
+        <div class="expertise-number">01</div>
+        <h3>Pre-Filing Strategy</h3>
+        <p>Novelty and denomination checks, other searches in local and foreign official databases, strategy development in view of commercialisation targets in Türkiye, and preparation of all application documents.</p>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-number">02</div>
+        <h3>Filing & Prosecution</h3>
+        <p>Electronic or paper filing, management of all communications with local and foreign authorities until registration, regular updates on case developments and Turkish PBR practice, and handling of any opposition.</p>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-number">03</div>
+        <h3>Post-Registration</h3>
+        <p>Delivery of the original Certificate of Registration to your address, timely annuity reminders, and renewal actions taken promptly upon your approval.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW I WORK -->
+<section id="how-i-work">
+  <div class="section-inner fade-in">
+    <p class="section-label">How I Work</p>
+    <h2 class="section-title">From first filing to registration — and beyond.</h2>
+    <div class="process-list">
+      <div class="process-item">
+        <div class="process-number">01</div>
+        <div class="process-content">
+          <h3>Initial Consultation</h3>
+          <p>I review the available information and documents, assess your protection needs in Türkiye, and define the right strategy before any application is filed.</p>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-number">02</div>
+        <div class="process-content">
+          <h3>Application & Examination</h3>
+          <p>I conduct the necessary searches and checks to ensure a smooth application process, prepare all required documents, and handle filing via UPOV PRISMA or paper filing. I manage all communications with local and foreign authorities, monitor stages of the DUS report, follow publications in the Plant Varieties Bulletin and keep you informed, arrange importation of testing materials where necessary, and submit counter-statements in the event of any opposition.</p>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-number">03</div>
+        <div class="process-content">
+          <h3>Ongoing Portfolio Care</h3>
+          <p>I manage the issuance process of the original Certificate of Registration and ensure its safe delivery to your address. I handle all ancillary petitions as required, including corrections, change of denomination, licensing, transfer of rights, and change of applicant name or address. I send annuity reminders well in advance and take all necessary renewal actions promptly upon your approval.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY URANIS -->
+<section id="why-uranis">
+  <div class="section-inner fade-in">
+    <p class="section-label">Why Uranis</p>
+    <h2 class="section-title">Six principles I never compromise on.</h2>
+    <div class="principles-list">
+      <div class="principle-item">
+        <span class="principle-name">24-Hour Response</span>
+        <span class="principle-desc">Every client query is answered within 24 hours, without exception.</span>
+      </div>
+      <div class="principle-item">
+        <span class="principle-name">Efficient Turnaround</span>
+        <span class="principle-desc">With over a decade of exclusive PBR experience, all procedures are completed in the shortest possible timeframe.</span>
+      </div>
+      <div class="principle-item">
+        <span class="principle-name">Proactive Updates</span>
+        <span class="principle-desc">You are kept informed of all developments in Turkish PBR law and your portfolio status before you need to ask.</span>
+      </div>
+      <div class="principle-item">
+        <span class="principle-name">Inclusive Pricing</span>
+        <span class="principle-desc">Certain services are provided at no additional charge that other IP practices bill separately.</span>
+      </div>
+      <div class="principle-item">
+        <span class="principle-name">Data & Document Security</span>
+        <span class="principle-desc">Your confidential data is handled with strict care. Paper applications are delivered by hand directly to the Turkish Authority.</span>
+      </div>
+      <div class="principle-item">
+        <span class="principle-name">Full Cost Transparency</span>
+        <span class="principle-desc">The total cost of every matter is agreed upfront. No surprises, no hidden fees.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner fade-in">
+    <p class="section-label">Independent PBR Counsel</p>
+    <div class="about-grid">
+      <div class="about-text">
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;line-height:1.15;color:var(--black);margin-bottom:2rem;">Independent PBR Counsel in Türkiye.</h2>
+        <p>I am an independent consultant specialising exclusively in plant breeders' rights and plant variety protection. For over a decade I worked as a PBR consultant at a leading Istanbul IP firm, where I handled prosecution, portfolio management, and advisory work for domestic and international clients across a wide range of crop species and ornamentals.</p>
+        <p>Since establishing Uranis, I have continued to advise international IP firms and rights holders requiring specialist expertise in Turkish PBR law and UPOV-framework matters.</p>
+        <p>Every matter is personally handled by me, with full case documentation maintained to ensure seamless continuity at all times.</p>
+        <div class="about-contact">
+          <span><a href="mailto:ahmet@uranis.tr">ahmet@uranis.tr</a></span>
+          <span>Istanbul, Türkiye (UTC+3)</span>
+          <span><a href="https://www.linkedin.com/in/ahmet-altu%C4%9F-baba-4b993a61/" target="_blank" rel="noopener">LinkedIn Profile →</a></span>
+        </div>
+      </div>
+      <div class="about-sidebar">
+        <div class="about-sidebar-item">
+          <p class="label">Specialisation</p>
+          <p class="value">Plant Breeders' Rights — Türkiye</p>
+        </div>
+        <div class="about-sidebar-item">
+          <p class="label">Experience</p>
+          <p class="value">Over a decade in PBR prosecution & portfolio management</p>
+        </div>
+        <div class="about-sidebar-item">
+          <p class="label">Jurisdiction</p>
+          <p class="value">Türkiye — UPOV member state</p>
+        </div>
+        <div class="about-sidebar-item">
+          <p class="label">Languages</p>
+          <p class="value">Turkish, English</p>
+        </div>
+        <div class="about-sidebar-item">
+          <p class="label">Based in</p>
+          <p class="value">Istanbul, Türkiye</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact-cta">
+  <div class="section-inner fade-in">
+    <p class="section-label">Start the Conversation</p>
+    <h2 class="section-title">Your PBR matters in Türkiye, handled with precision.</h2>
+    <p>Whether you need a single filing or ongoing portfolio management, I am available to discuss your plant variety protection needs in Türkiye.</p>
+    <a href="#contact" class="btn-primary">Get in Touch →</a>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <h2>Let's discuss your PBR needs.</h2>
+        <p>I respond to all enquiries within 24 hours. Based in Istanbul, Türkiye (UTC+3).</p>
+        <p class="contact-detail">Email: <a href="mailto:ahmet@uranis.tr">ahmet@uranis.tr</a></p>
+        <p class="contact-detail">LinkedIn: <a href="https://www.linkedin.com/in/ahmet-altu%C4%9F-baba-4b993a61/" target="_blank" rel="noopener">Ahmet Altuğ Baba</a></p>
+      </div>
+      <div class="fade-in">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="org">Organisation</label>
+              <input type="text" id="org" name="organisation" placeholder="Enter organisation or firm name">
+            </div>
+            <div class="form-group">
+              <label for="help">How can I help you?</label>
+              <input type="text" id="help" name="how_can_i_help" placeholder="Please describe your project or enquiry">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Enter your message"></textarea>
+          </div>
+          <p class="form-note">For enquiries involving documents, please write directly to <a href="mailto:ahmet@uranis.tr">ahmet@uranis.tr</a></p>
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© Uranis 2026. All rights reserved.</p>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Fade in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
